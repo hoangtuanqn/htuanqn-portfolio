@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://htuanqn.id.vn/sitemap.xml
