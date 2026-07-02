@@ -31,4 +31,19 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // Render contact info (email/phone) via DOM instead of static HTML, so plain-text scrapers can't harvest it
+    function renderContactLink(elementId, href, displayText) {
+        const el = document.getElementById(elementId);
+        if (!el) return;
+        const link = document.createElement('a');
+        link.href = href;
+        link.textContent = displayText;
+        el.textContent = '';
+        el.appendChild(link);
+    }
+
+    renderContactLink('work-email', 'mailto:' + 'tuan' + '@' + 'mstsoftware.vn', 'tuan' + '@' + 'mstsoftware.vn');
+    renderContactLink('personal-email', 'mailto:' + 'phamhoangtuanqn' + '@' + 'gmail.com', 'phamhoangtuanqn' + '@' + 'gmail.com');
+    renderContactLink('personal-phone', 'tel:' + '+84812665001', '0812 665 001');
+
 });
